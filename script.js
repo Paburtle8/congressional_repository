@@ -10,9 +10,30 @@ const logPasswordTB = document.querySelector("#logPasswordTB");
 const plus = document.querySelector("#plus");
 const minus = document.querySelector("#minus");
 
+const aiText = document.querySelector(".aiText");
 
 
 
+const enterBTN = document.getElementById("enterBTN");
+
+    enterBTN.addEventListener("click", async () => {
+      try {
+        const res = await fetch("http://localhost:3000/ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: "write a haiku about ai" }),
+        });
+
+        const data = await res.json();
+        aiText.textContent = data.output;
+      } catch (err) {
+        console.error(err);
+      }
+    });
+
+
+
+    
 
 
 function login() {
@@ -88,5 +109,6 @@ function minusBox() {
 
 
 if (minus) {
-    minus.addEventListener("click", minusBox)
+    minus.addEventListener("click", minusBox);
 }
+

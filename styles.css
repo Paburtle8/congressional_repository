@@ -145,3 +145,9 @@ body {
     border-width: .5vw;
     
 }
+
+.aiText {
+    position: absolute;
+    left:50vw;
+    bottom:50vh;
+}

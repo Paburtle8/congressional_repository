@@ -18,8 +18,8 @@
   "homepage": "https://github.com/Paburtle8/congressional_repository#readme",
   "description": "",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "cors": "^2.8.5",
+    "node-fetch": "^3.3.2",
+    "openai": "^5.12.2"
   }
-
-  
 }
