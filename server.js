@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
+import fetch from "node-fetch";
+
 
 const app = express();
 app.use(cors()); 
@@ -28,3 +30,26 @@ app.post("/ai", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
+
+
+
+app.post("/search", async (req, res) => {
+  try {
+    const { query } = req.body;
+
+    const serpAns = await fetch(`https://serpapi.com/search.json?q=${encodeURIComponent(query)}&api_key=207e8884fd908b80ffaf530bcccecbcb0593fc649ab8bf86a29fb7ba60379911`);
+    const data = await serpAns.json();
+
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+
+
+
+
+

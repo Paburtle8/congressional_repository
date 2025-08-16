@@ -15,24 +15,37 @@ const aiText = document.querySelector(".aiText");
 
 
 const enterBTN = document.getElementById("enterBTN");
+enterBTN.addEventListener("click", async () => {
+  try {
+    
+    const searchRes = await fetch("http://localhost:3000/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: "Westhill HS Program of Studies" }),
+    });
+    const searchData = await searchRes.json();
 
-    enterBTN.addEventListener("click", async () => {
-      try {
-        const res = await fetch("http://localhost:3000/ai", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: "write a haiku about ai" }),
-        });
 
-        const data = await res.json();
-        aiText.textContent = data.output;
-      } catch (err) {
-        console.error(err);
-      }
+    const promptWithSearch= `
+Based on these grades, what classes should I take for next year sophomore according to the Westhill HS Program of Studies in Stamford? 
+English 9: A-, Algebra I: B+, Biology: B, World History: A, Spanish I: B, Physical Education: A, Intro to CS: A-
+Search results: ${JSON.stringify(searchData)}
+`;
+
+    const res = await fetch("http://localhost:3000/ai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: promptWithSearch }),
     });
 
+    const data = await res.json();
+    aiText.textContent = data.output;
 
-
+  } catch (err) {
+    console.error(err);
+  }
+});
+    
     
 
 
