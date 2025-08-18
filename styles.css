@@ -99,7 +99,8 @@ body {
 }
 #plus{
     width: 3vw;
-
+    animation: plus .8s ease 1; 
+    left:0vw;
 
 }
  
@@ -110,7 +111,8 @@ body {
 
 #minus{
     width: 3vw;
-
+    animation: minus .8s ease 1; 
+    left:0vw;
 
 }
 
@@ -124,8 +126,8 @@ body {
 #passionTB
 {
     background-color: blanchedalmond;
-        width:10vw;
-
+    width:10vw;
+    animation: passionTB .8s ease 1
 
 }
 
@@ -159,6 +161,124 @@ body {
     padding: 10px;
     border: solid 3px black;
     font-size:1.7vw;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 
 }
 
+
+.aiText.show {
+    opacity: 1;
+
+}
+
+
+#gradeText {
+    animation: gradeText .8s ease 1; 
+    left:0vw;
+}
+
+#CGtext {
+    animation: CGtext .8s ease 1; 
+    left:0vw;
+}
+
+#gradeTB {
+    animation: gradeTB .8s ease 1; 
+    left:0vw;
+}
+
+#cgTB1 {
+    animation: cgTB1 .8s ease 1; 
+    left:0vw;
+}
+#cgTB2 {
+    animation: cgTB2 .8s ease 1; 
+    left:0vw;
+}
+#cgTB3 {
+    animation: cgTB3 .8s ease 1; 
+    left:0vw;
+}
+#cgTB4 {
+    animation: cgTB3 .8s ease 1; 
+    left:0vw;
+}
+#schoolText {
+    animation: schoolText .8s ease 1; 
+    left:0vw;
+}
+#schoolTB{
+    animation: schoolTB .8s ease 1; 
+    left:0vw;
+}
+#PassionText{
+    animation: PassionText .8s ease 1; 
+    left:0vw;
+}
+
+
+@keyframes gradeText {
+    from { transform: translateX(-20vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes gradeTB {
+    from { transform: translateX(-40vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes CGtext {
+    from { transform: translateX(-60vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes cgTB1 {
+    from { transform: translateX(-80vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes cgTB2 {
+    from { transform: translateX(-100vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes cgTB3 {
+    from { transform: translateX(-120vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes cgTB4 {
+    from { transform: translateX(-140vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes plus {
+    from { transform: translateX(-160vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes minus {
+    from { transform: translateX(-180vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes schoolText {
+    from { transform: translateX(-200vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes schoolTB {
+    from { transform: translateX(-220vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes PassionText {
+    from { transform: translateX(-240vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes passionTB {
+    from { transform: translateX(-260vw); } 
+    to { transform: translateX(0vw); }
+}
