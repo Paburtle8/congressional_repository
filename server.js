@@ -18,8 +18,7 @@ app.post("/ai", async (req, res) => {
 
     const response = await openai.responses.create({
       model: "gpt-5",
-      input: prompt,
-      store: true,
+      input: prompt
     });
 
     res.json({ output: response.output_text });

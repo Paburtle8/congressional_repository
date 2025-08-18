@@ -148,6 +148,17 @@ body {
 
 .aiText {
     position: absolute;
-    left:50vw;
-    bottom:50vh;
+    left:30vw;
+    bottom:40vh;
+    white-space: pre-wrap;
+    line-height: 1.45;
+    max-width: 70ch;
+    margin: 1rem 0;
+    height:50vh;
+    overflow:scroll;
+    padding: 10px;
+    border: solid 3px black;
+    font-size:1.7vw;
+
 }
+
