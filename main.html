@@ -59,7 +59,19 @@
         <section class="aiText" aria-live="polite"></section>
     </div>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const aiText = document.querySelector(".aiText");
+        const savedConversation = localStorage.getItem("conversation") || "";
+        const username = localStorage.getItem("username");
 
+        if (aiText && savedConversation) {
+            aiText.textContent = savedConversation;
+            aiText.classList.add("show");
+        }
+    });
+
+    </script>
     <script type="module" src="script.js" defer></script>
    
 </body>

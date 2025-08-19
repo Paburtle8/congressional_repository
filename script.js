@@ -9,27 +9,64 @@ document.addEventListener("DOMContentLoaded", () => {
     const enterBTN = document.getElementById("enterBTN");
     const aiText = document.querySelector(".aiText");
 
+    const savedConversation = localStorage.getItem("conversation") || "";
+    if (aiText && savedConversation) {
+        aiText.textContent = savedConversation;
+        aiText.classList.add("show");
+    }
+
     if (logBtn) { 
         logBtn.addEventListener("click", () => {
             window.location.href = "login.html";
         });
     }
 
+    async function handleAuth(username,password){
+        const searchRes = await fetch(`https://sheetdb.io/api/v1/tt8ri7vy2yyfe/search?Usernames=${username}`); 
+        const users = await searchRes.json();
+
+        if(users.length){
+            if (users[0].Passwords==password){
+                alert("Password Correct");
+                return users[0].Conversation || "";     }
+            else{
+                alert("wrong password!");
+                    return null;
+            }
+        } else {
+            await fetch("https://sheetdb.io/api/v1/tt8ri7vy2yyfe", {
+                method: "POST",
+                headers: {"Content-type": "application/json"},
+                body: JSON.stringify({data: [{Usernames: username, Passwords: password, Conversation: ""}] })
+            });
+            alert("Account created!");
+            return "";
+        }
+    }
+
+    async function saveConversation(username, updatedConversation) {
+        await fetch(`https://sheetdb.io/api/v1/tt8ri7vy2yyfe/Usernames/${username}`, { 
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify({ data: [{ Conversation: updatedConversation }] }) 
+        });
+    }
+
     if (logDone) {
-        logDone.addEventListener("click", () => {
+        logDone.addEventListener("click", async () => {
             if (!logUserTB.value || !logPasswordTB.value) return alert("Please fill out all boxes");
 
-            fetch("https://sheetdb.io/api/v1/tt8ri7vy2yyfe", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    data: [{ Usernames: logUserTB.value, Passwords: logPasswordTB.value }]
-                })
-            });
+            const conversation = await handleAuth(logUserTB.value, logPasswordTB.value);
 
-            setTimeout(() => {
+            if (conversation !== null) {
+                localStorage.setItem("conversation", conversation);
+                localStorage.setItem("username", logUserTB.value);
+
+                if (aiText) aiText.textContent = conversation;
+
                 window.location.href = "main.html";
-            }, 500);
+            }
+
         });
     }
 
@@ -107,6 +144,17 @@ You are CounselorAI. Based on the school's Program of studies/course catalog, su
                 if (aiText) 
                     aiText.textContent = data.output;
                     aiText.classList.add("show");
+
+                const existingConv = localStorage.getItem("conversation") || "";
+                const userInput = `
+                    
+                    `;
+
+                    // Save conversation using the clean input
+                const updatedConv = `${existingConv}\n${userInput}\nAI: ${data.output}`;
+                localStorage.setItem("conversation", updatedConv);
+                const username = localStorage.getItem("username");
+                if (username) await saveConversation(username, updatedConv);
 
 
             } catch (err) {
