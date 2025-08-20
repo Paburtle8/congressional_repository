@@ -18,8 +18,10 @@
   "homepage": "https://github.com/Paburtle8/congressional_repository#readme",
   "description": "",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
+    "install": "^0.13.0",
     "node-fetch": "^3.3.2",
     "openai": "^5.12.2",
     "serpapi": "^2.2.1"

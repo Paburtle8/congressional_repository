@@ -1,6 +1,7 @@
 .introBody {
     font-size: 4.5vw;
     width:70vw;
+    color: rgb(155, 140, 140);
 }
 
 #logo {
@@ -8,6 +9,7 @@
     width: 25vw;
     top:1vh;
     right:36vw;
+
 }
 
 #logBtn {
@@ -22,17 +24,19 @@
     background-color:rgb(225, 218, 236);
     border-color:rgb(233, 156, 69);
     border-width: .5vw;
-    
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6)
 }
 
 
 .titleTitle {
     font-size: 10vw;
     font-family: Oswald;
+    color:rgb(255, 255, 255);
+    
 }
 
 body {
-    background-color: rgb(250, 247, 240);
+    background-color: rgb(41, 61, 83);
 }
 
 
@@ -42,24 +46,34 @@ body {
     font-size:5vw; 
     left:30vw;
     top:15vw;
+    color:rgb(155, 140, 140);
+    -webkit-text-stroke: .5px black;
 }
 
 .logUser input{
     width:20vw; 
     height:5vh;
     font-size:1.5vw;
+    background-color:rgb(219, 207, 207);
+
+
 }
 .logPassword{
     position:absolute;
     font-size:5vw; 
     left:30vw;
     top:50vh;
+    color:rgb(155, 140, 140);
+    -webkit-text-stroke: .5px black;
 }
 
 .logPassword input{
     width:20vw; 
     height:5vh;
     font-size:1.5vw;
+    background-color:rgb(219, 207, 207);
+
+    
 }
 
 
@@ -69,9 +83,12 @@ body {
     top:10vw;
     width:60vw;
     height:64vh;
-    outline: solid black .5vw;
     border-radius: 4%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(90deg, rgb(55, 75, 97), rgb(65, 83, 100)) ;
+
 }
+
 
 
 .logDone {
@@ -81,6 +98,9 @@ body {
     font-size:1.5vw;
     top:65vh;
     left:47vw;
+    background-color:rgb(201, 190, 190);
+    border-radius: 15px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -163,7 +183,6 @@ body {
     font-size:1.7vw;
     opacity: 0;
     transition: opacity 1s ease-in;
-
 }
 
 
