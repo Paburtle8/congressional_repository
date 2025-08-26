@@ -313,6 +313,17 @@ body {
 
 
 }
+#welcomeText{
+    position:absolute;
+    left:35vw;
+    font-family: Mulish;
+    color:whitesmoke;
+    font-size:45px;
+
+
+
+
+}
 
 @keyframes gradeText {
     from { transform: translateX(-20vw); } 
