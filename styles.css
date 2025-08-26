@@ -1,14 +1,17 @@
 .introBody {
-    font-size: 4.5vw;
     width:70vw;
     color: rgb(155, 140, 140);
+    font-size: 4vw;
+    font-family: Mulish;
+    
+    
 }
 
 #logo {
     position:absolute;
     width: 25vw;
-    top:1vh;
-    right:36vw;
+    top:2.5vh;
+    right:27vw;
 
 }
 
@@ -16,21 +19,20 @@
     position:absolute;
     width: 18vw;
     height:8vw;
-    border-radius:10%;
     top:70vh;
     left:70vw;
+    border-radius:20px;
     font-size: 2.5vw;
     font-family: Mulish;
-    background-color:rgb(225, 218, 236);
-    border-color:rgb(233, 156, 69);
-    border-width: .5vw;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6)
+    background-color:rgb(218, 226, 236);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+    
 }
 
 
 .titleTitle {
     font-size: 10vw;
-    font-family: Oswald;
+    font-family: Arial Narrow;
     color:rgb(255, 255, 255);
     
 }
@@ -103,9 +105,10 @@ body {
     font-size:1.5vw;
     top:65vh;
     left:47vw;
-    background-color:rgb(201, 190, 190);
     border-radius: 15px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    font-family: Mulish;
+    background-color:rgb(218, 226, 236);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
 }
 
 
@@ -303,9 +306,9 @@ body {
 }
 #aiMan{
     position:absolute;
-    bottom: 30vh;
+    bottom: 45vh;
     width:60vw;
-    left:55vw;
+    left:60vw;
     transform:scaleX(-1);
 
 
