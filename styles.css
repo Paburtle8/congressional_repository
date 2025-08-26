@@ -20,7 +20,7 @@
     top:70vh;
     left:70vw;
     font-size: 2.5vw;
-    font-family: Oswald;
+    font-family: Mulish;
     background-color:rgb(225, 218, 236);
     border-color:rgb(233, 156, 69);
     border-width: .5vw;
@@ -47,7 +47,8 @@ body {
     left:30vw;
     top:15vw;
     color:rgb(155, 140, 140);
-    -webkit-text-stroke: .5px black;
+    font-family: Mulish;
+
 }
 
 .logUser input{
@@ -55,6 +56,8 @@ body {
     height:5vh;
     font-size:1.5vw;
     background-color:rgb(219, 207, 207);
+    border: 2px solid transparent;
+    border-radius: 5px;
 
 
 }
@@ -64,7 +67,7 @@ body {
     left:30vw;
     top:50vh;
     color:rgb(155, 140, 140);
-    -webkit-text-stroke: .5px black;
+    font-family: Mulish;
 }
 
 .logPassword input{
@@ -72,6 +75,8 @@ body {
     height:5vh;
     font-size:1.5vw;
     background-color:rgb(219, 207, 207);
+    border: 2px solid transparent;
+    border-radius: 5px;
 
     
 }
@@ -115,18 +120,25 @@ body {
 
     width:15vw;
     background-color: blanchedalmond;
+    border: 2px solid transparent;
+
 
 }
 #plus{
     width: 3vw;
     animation: plus .8s ease 1; 
     left:0vw;
+    margin-right: 1vw; 
 
 }
  
 
 .cgDiv input {
     background-color: blanchedalmond;
+    border: 2px solid transparent;
+    border-radius: 5px;
+
+
 }
 
 #minus{
@@ -138,16 +150,26 @@ body {
 
 #schoolTB{
     background-color: blanchedalmond;
-        width: 20vw;
+    width: 20vw;
+    border: 2px solid transparent;
+
 
 
 }
+.addBtn, .minusBtn {
+    display: inline-block; 
+}
 
-#passionTB
-{
+#passionTB{
     background-color: blanchedalmond;
     width:10vw;
-    animation: passionTB .8s ease 1
+    animation: passionTB .8s ease 1;
+    border: 2px solid transparent;
+
+
+
+
+    
 
 }
 
@@ -155,16 +177,15 @@ body {
 
 #enterBTN {
     position:absolute;
-    width: 18vw;
-    height:8vw;
-    border-radius:10%;
-    top:70vh;
-    left:30vw;
+    width: 15vw;
+    height:5vw;
+    border-radius:25px;
+    top:85vh;
+    left:32vw;
     font-size: 2.5vw;
-    font-family: Oswald;
-    background-color:rgb(225, 218, 236);
-    border-color:rgb(233, 156, 69);
-    border-width: .5vw;
+    font-family: Mulish;
+    background-color:rgb(218, 226, 236);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
     
 }
 
@@ -182,7 +203,7 @@ body {
     border: solid 3px black;
     font-size:1.7vw;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transition: opacity 0.00001s ease-in;
 }
 
 
@@ -195,49 +216,107 @@ body {
 #gradeText {
     animation: gradeText .8s ease 1; 
     left:0vw;
+    color:rgb(224, 224, 224);
+
+
 }
+  
+
 
 #CGtext {
     animation: CGtext .8s ease 1; 
     left:0vw;
+    color: rgb(224, 224, 224);
+    
 }
 
 #gradeTB {
     animation: gradeTB .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
+
 }
 
 #cgTB1 {
     animation: cgTB1 .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
+
 }
 #cgTB2 {
     animation: cgTB2 .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
+
 }
 #cgTB3 {
     animation: cgTB3 .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
+
 }
 #cgTB4 {
     animation: cgTB3 .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
+
 }
 #schoolText {
     animation: schoolText .8s ease 1; 
     left:0vw;
+    color:rgb(224, 224, 224);
+
+
 }
 #schoolTB{
     animation: schoolTB .8s ease 1; 
     left:0vw;
+    border-radius: 5px;
 }
 #PassionText{
     animation: PassionText .8s ease 1; 
     left:0vw;
+    color:rgb(224, 224, 224);
+
+
+}
+#passionTB{
+    animation: passionTB .8s ease 1; 
+    left:0vw;
+    border-radius: 5px;
+
+}
+.contdiv{
+    position:absolute;
+    background-color: rgb(50, 84, 121);
+    width:28vw;
+    height:45vw;
+    padding:15px;
+    border-radius:20px;
+    font-family: Mulish;
+    font-size:15px;
+    background: linear-gradient(90deg, rgb(66, 90, 114), rgb(65, 83, 100)) ;
+    animation: contdiv .8s ease 1;
+   overflow-y:auto;
+   max-height:45vw;
+
+}
+#aiMan{
+    position:absolute;
+    bottom: 30vh;
+    width:60vw;
+    left:55vw;
+    transform:scaleX(-1);
+
+
 }
 
-
 @keyframes gradeText {
+    from { transform: translateX(-20vw); } 
+    to { transform: translateX(0vw); }
+}
+
+@keyframes contdiv {
     from { transform: translateX(-20vw); } 
     to { transform: translateX(0vw); }
 }

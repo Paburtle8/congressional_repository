@@ -8,75 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" >
     <title>Document</title>
 </head>
 <body>
 
-    <div class="gradeDiv">
 
+    <div class="contdiv">
+        
+
+    
+
+    <div class="gradeDiv">
+        
         <h1 id="gradeText">Grade:</h1>
         <input id="gradeTB" placeholder="ex:junior">
     </div>
     
     <div class="cgDiv">
-
+        
         <h1 id="CGtext">Classes+Grades:</h1>
         <input id="cgTB1" placeholder="ex:apush - 99">
         <input id="cgTB2">
         <input id="cgTB3">
         <input id="cgTB4">
-
+        
     </div>
-
+    
     <div class = "addBtn">
-            <img style="cursor: pointer;" id="plus" src="plusimage.png">
-
-
+        <img style="cursor: pointer;" id="plus" src="plusimage.png">
+        
+        
     </div>
-
+    
     <div class = "minusBtn">
-            <img style="cursor: pointer;" id="minus" src="minus.png">
-
-
+        <img style="cursor: pointer;" id="minus" src="minus.png">
+        
+        
     </div>
-
+    
     <div class="schoolDiv">
-
+        
         <h1 id="schoolText">School:</h1>
         <input id="schoolTB" placeholder="ex:Long Ridge High School, Stamford, CT">
     </div>
-
-
+    
+    
     <div class="passionDiv">
-
-        <h1 id = "PassionText">Passion/Area of Intrest:</h1>
+        
+        <h1 id = "PassionText">Passion/Area of Interest:</h1>
         <input id="passionTB" placeholder="ex:Computers">
     </div>
+    
+    <button style="cursor:pointer;" id="enterBTN"> Enter</button> 
+    <img id="aiMan" src="roji.png">
 
-        <button style="cursor:pointer;" id="enterBTN"> Enter</button>
-
+</div>
+    
     <div class="aiContainer">
-
+        
         <section class="aiText" aria-live="polite"></section>
     </div>
-
-
+    
+    
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const aiText = document.querySelector(".aiText");
-        const savedConversation = localStorage.getItem("conversation") || "";
-        const username = localStorage.getItem("username");
-
-        if (aiText && savedConversation) {
-            aiText.textContent = savedConversation;
-            aiText.classList.add("show");
-        }
-    });
-
-    </script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const aiText = document.querySelector(".aiText");
+            const savedConversation = localStorage.getItem("conversation") || "";
+            const username = localStorage.getItem("username");
+            
+            if (aiText && savedConversation) {
+                aiText.textContent = savedConversation;
+                aiText.classList.add("show");
+            }
+        });
+        
+        </script>
     <script type="module" src="script.js" defer></script>
-   
+    
+
 </body>
 </html>
