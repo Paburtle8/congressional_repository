@@ -10,12 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const aiText = document.querySelector(".aiText");
     const anchorSignUp = document.querySelector("#anchorSignUp");
     const welcomeDiv = document.querySelector(".welcomeDiv");
+    const dot = document.querySelector("#dot");
 
 
-  
+
+    let count = 0;
+
+    setInterval(() => {
+        if (count < 1) {
+            count++;
+            dot.textContent = "Loading.".repeat(count); 
+
+        } else {
+            dot.textContent = ""; 
+            count = 0; 
+        }
+    }, 500); 
+
 
     function refresh() {
-        welcomeDiv.textContent = "Get Started";
+        welcomeDiv.textContent = "Get Started Now!";
         logDone.textContent="Sign up";
         anchorSignUp.textContent="Already have an account? Log in";
         
@@ -124,14 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (plus) { 
         plus.addEventListener("click", () => {
             const container = document.querySelector(".cgDiv");
-            if (container) container.appendChild(document.createElement("input")); // Added check
+            if (container) container.appendChild(document.createElement("input")); 
         });
     }
 
     if (minus) { 
         minus.addEventListener("click", () => {
             const container = document.querySelector(".cgDiv");
-            if (container) { // Added check
+            if (container) { 
                 const lastInput = container.querySelector("input:last-of-type");
                 if (lastInput) container.removeChild(lastInput);
             }
@@ -141,6 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (enterBTN) { 
         enterBTN.addEventListener("click", async () => {
             try {
+
+                
                 const gradeTB = document.getElementById("gradeTB");
                 const schoolTB = document.getElementById("schoolTB");
                 const passionTB = document.getElementById("passionTB");
@@ -186,10 +202,11 @@ Notes:
 
 Instructions for CounselorAI:
 - Be concise and clear; avoid long paragraphs.
-- Use bullet points exactly as shown; leave a blank line between sections.
+- Use bullet points exactly as shown; leave a blank line between bullet points.
 - Suggest courses based on the student's grade, prior classes, and school program.
 - Prioritize courses that match the student's passions and academic strengths.
 - Provide definitive recommendations; do not hedge.
+- Make a new add numbers for each subject. (like 1. 2. 3.)
 
 `;
 

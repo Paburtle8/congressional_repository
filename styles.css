@@ -216,7 +216,7 @@ body {
 }
 .welcomeDiv{
     position:absolute;
-    left:35vw;
+    left:40vw;
     font-family: Mulish;
     color:whitesmoke;
     font-size:45px;
@@ -244,12 +244,17 @@ body {
     position:absolute;
     left:0vw;
     color: rgb(224, 224, 224);
-    left: 45vw;
+    left: 43.5vw;
     bottom: 20vh;
     font-family: Mulish;
     
 
   }
+
+
+#dot {
+    position:absolute;
+}
 
 
 #CGtext {
