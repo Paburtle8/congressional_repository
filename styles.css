@@ -9,9 +9,9 @@
 
 #logo {
     position:absolute;
-    width: 25vw;
-    top:2.5vh;
-    right:27vw;
+    width: 22vw;
+    top:0.55vh;
+    right:35vw;
 
 }
 
@@ -34,6 +34,7 @@
     font-size: 10vw;
     font-family: Arial Narrow;
     color:rgb(255, 255, 255);
+    display:inline-block;
     
 }
 
@@ -48,7 +49,7 @@ body {
     font-size:5vw; 
     left:30vw;
     top:15vw;
-    color:rgb(155, 140, 140);
+    color:whitesmoke;
     font-family: Mulish;
 
 }
@@ -68,8 +69,9 @@ body {
     font-size:5vw; 
     left:30vw;
     top:50vh;
-    color:rgb(155, 140, 140);
     font-family: Mulish;
+    color:whitesmoke;
+
 }
 
 .logPassword input{
@@ -90,7 +92,7 @@ body {
     top:10vw;
     width:60vw;
     height:64vh;
-    border-radius: 4%;
+    border-radius: 25px;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
     background: linear-gradient(90deg, rgb(55, 75, 97), rgb(65, 83, 100)) ;
 
@@ -194,8 +196,8 @@ body {
 
 .aiText {
     position: absolute;
-    left:30vw;
-    bottom:40vh;
+    left:35vw;
+    bottom:30vh;
     white-space: pre-wrap;
     line-height: 1.45;
     max-width: 70ch;
@@ -203,10 +205,25 @@ body {
     height:50vh;
     overflow:scroll;
     padding: 10px;
-    border: solid 3px black;
+    background: linear-gradient(90deg, rgb(66, 90, 114), rgb(65, 83, 100)) ;
+    border-radius: 10px;
     font-size:1.7vw;
+    font-family: Mulish;
+    color:whitesmoke;
     opacity: 0;
+    width:50vw;
     transition: opacity 0.00001s ease-in;
+}
+.welcomeDiv{
+    position:absolute;
+    left:35vw;
+    font-family: Mulish;
+    color:whitesmoke;
+    font-size:45px;
+
+
+
+
 }
 
 
@@ -223,7 +240,16 @@ body {
 
 
 }
-  
+  #anchorSignUp{
+    position:absolute;
+    left:0vw;
+    color: rgb(224, 224, 224);
+    left: 45vw;
+    bottom: 20vh;
+    font-family: Mulish;
+    
+
+  }
 
 
 #CGtext {

@@ -8,6 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const minus = document.querySelector("#minus");
     const enterBTN = document.getElementById("enterBTN");
     const aiText = document.querySelector(".aiText");
+    const anchorSignUp = document.querySelector("#anchorSignUp");
+    const welcomeDiv = document.querySelector(".welcomeDiv");
+
+
+  
+
+    function refresh() {
+        welcomeDiv.textContent = "Get Started";
+        logDone.textContent="Sign up";
+        anchorSignUp.textContent="Already have an account? Log in";
+        
+
+    }
+    function goBack() {
+        welcomeDiv.textContent = "Welcome Back!";
+        logDone.textContent="Log in";
+        anchorSignUp.textContent="Don't have an account? Sign up!";
+        
+
+    }
+    
+    if (anchorSignUp) {
+        anchorSignUp.addEventListener("click", () => {
+            if (anchorSignUp.textContent.includes("Already have an account? Log in")) {
+                goBack();
+            } else {
+                refresh();
+            }
+        });
+    }
+    
 
     const savedConversation = localStorage.getItem("conversation") || "";
     if (aiText && savedConversation) {
@@ -21,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    async function handleAuth(username,password){
+    async function logIn(username,password){
         const searchRes = await fetch(`https://sheetdb.io/api/v1/tt8ri7vy2yyfe/search?Usernames=${username}`); 
         const users = await searchRes.json();
 
@@ -33,7 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("wrong password!");
                     return null;
             }
-        } else {
+        } 
+    }
+
+    async function signUp(username,password){
+            {
             await fetch("https://sheetdb.io/api/v1/tt8ri7vy2yyfe", {
                 method: "POST",
                 headers: {"Content-type": "application/json"},
@@ -51,24 +86,40 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({ data: [{ Conversation: updatedConversation }] }) 
         });
     }
+    
 
     if (logDone) {
         logDone.addEventListener("click", async () => {
             if (!logUserTB.value || !logPasswordTB.value) return alert("Please fill out all boxes");
+    
+            const searchRes = await fetch(`https://sheetdb.io/api/v1/tt8ri7vy2yyfe/search?Usernames=${logUserTB.value}`);
+            const users = await searchRes.json();
+    
+            let conversation;
+    
+            if (users.length) {
 
-            const conversation = await handleAuth(logUserTB.value, logPasswordTB.value);
+                conversation = await logIn(logUserTB.value, logPasswordTB.value);
+            } else {
 
+                conversation = await signUp(logUserTB.value, logPasswordTB.value);
+            }
+    
             if (conversation !== null) {
                 localStorage.setItem("conversation", conversation);
                 localStorage.setItem("username", logUserTB.value);
-
-                if (aiText) aiText.textContent = conversation;
-
+    
+                if (aiText) {
+                    aiText.textContent = conversation;
+                    aiText.classList.add("show");
+                }
+    
                 window.location.href = "main.html";
             }
-
+    
         });
     }
+    
 
     if (plus) { 
         plus.addEventListener("click", () => {
@@ -124,14 +175,22 @@ Classes and Grades: ${studentInfo.classes.join(", ")}
 Search results: ${JSON.stringify(LowData)}
 
 Format only as:
-### Recommendations
-- [Course]: [Reason]
 
-### Notes
-- [Extra advice]
+ CounselorAI:
+ 
+Recommendations:
+- [Course]: [Reason based on student's prior grades and interests]
 
-Always use bullet points, no long paragraphs.
-You are CounselorAI. Based on the school's Program of studies/course catalog, suggest next-year classes.
+Notes:
+- [Extra advice, tips, or warnings, keep brief]
+
+Instructions for CounselorAI:
+- Be concise and clear; avoid long paragraphs.
+- Use bullet points exactly as shown; leave a blank line between sections.
+- Suggest courses based on the student's grade, prior classes, and school program.
+- Prioritize courses that match the student's passions and academic strengths.
+- Provide definitive recommendations; do not hedge.
+
 `;
 
                 const res = await fetch("http://localhost:3000/ai", {
@@ -150,11 +209,13 @@ You are CounselorAI. Based on the school's Program of studies/course catalog, su
                     
                     `;
 
-                    // Save conversation using the clean input
                 const updatedConv = `${existingConv}\n${userInput}\nAI: ${data.output}`;
                 localStorage.setItem("conversation", updatedConv);
                 const username = localStorage.getItem("username");
                 if (username) await saveConversation(username, updatedConv);
+                
+
+                
 
 
             } catch (err) {
