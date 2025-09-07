@@ -33,11 +33,20 @@
 .titleTitle {
     font-size: 10vw;
     font-family: Arial Narrow;
+    letter-spacing: 5px;
     color:rgb(255, 255, 255);
     display:inline-block;
-    
+    overflow:hidden;
+    width:0;
+    white-space: nowrap;
+    animation:
+        typing .7s steps(11, end) forwards;
 }
 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 13ch }
+}
 body {
     background-color: rgb(41, 61, 83);
 }
@@ -350,10 +359,38 @@ body {
     font-family: Mulish;
     color:whitesmoke;
     font-size:45px;
+}
 
+#target {
+    position:absolute;
+    width:200px;
+    top:76vh;
+    display: none;
+}
 
+#timer {
+    position:absolute;
+    top:70vh;
+    font-family: Mulish;
+    color:rgb(212, 212, 212);
+    left:80vw;
+    outline: auto;
+    padding: .3vw;
 
+}
 
+#testButton {
+    width:20vw;
+    position:absolute;
+    height:10vh;
+}
+
+#canvas {
+    position: absolute;
+    left:35vw;
+    top:15vh;
+    outline: auto;
+  
 }
 
 @keyframes gradeText {
