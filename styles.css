@@ -374,15 +374,33 @@ body {
     font-family: Mulish;
     color:rgb(212, 212, 212);
     left:80vw;
-    outline: auto;
+    outline: rgb(255, 255, 255) 4px solid;
     padding: .3vw;
+    border-radius: 5px;
+}
 
+#scoreText {
+    position:absolute;
+    top:80vh;
+    font-family: Mulish;
+    color:rgb(212, 212, 212);
+    left:82vw;
+    outline: rgb(255, 255, 255) 4px solid;
+    padding: .3vw;
+    border-radius: 5px;
 }
 
 #testButton {
-    width:20vw;
     position:absolute;
-    height:10vh;
+    width: 15vw;
+    height:5vw;
+    border-radius:15px;
+    top:75vh;
+    left:82vw;
+    font-size: 2.5vw;
+    font-family: Mulish;
+    background-color:rgb(199, 196, 181);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
 }
 
 #canvas {

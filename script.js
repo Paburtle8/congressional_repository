@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const anchorSignUp = document.querySelector("#anchorSignUp");
     const welcomeDiv = document.querySelector(".welcomeDiv");
     const dot = document.querySelector("#dot");
+    const testButton = document.getElementById("testButton");
 
 
 
@@ -156,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         enterBTN.addEventListener("click", async () => {
             try {
 
-                
+                testButton.style.display = "block";
                 const gradeTB = document.getElementById("gradeTB");
                 const schoolTB = document.getElementById("schoolTB");
                 const passionTB = document.getElementById("passionTB");
