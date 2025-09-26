@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
 
                 testButton.style.display = "block";
+
                 const gradeTB = document.getElementById("gradeTB");
                 const schoolTB = document.getElementById("schoolTB");
                 const passionTB = document.getElementById("passionTB");

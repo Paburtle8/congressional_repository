@@ -18,7 +18,7 @@ function gameStart() {
     game();
     clock();
     touch();
-
+    canvas.style.display = "block";
 }
 
 function game() {
