@@ -164,14 +164,18 @@ body {
 
 
 .cgDiv input {
+    padding: 8px;
     margin-bottom: 1vh;
     display: flex;
     flex-direction: column;
     width:15vw;
+    font-size: 15px;
 }
 
 .gradeDiv input{
+    font-size: 15px;
 
+    padding: 8px;
     width:15vw;
     background-color: blanchedalmond;
     border: 2px solid transparent;
@@ -188,6 +192,9 @@ body {
  
 
 .cgDiv input {
+    padding: 8px;
+    font-size: 15px;
+
     background-color: blanchedalmond;
     border: 2px solid transparent;
     border-radius: 5px;
@@ -203,6 +210,9 @@ body {
 }
 
 #schoolTB{
+    padding: 8px;
+    font-size: 15px;
+
     background-color: blanchedalmond;
     width: 20vw;
     border: 2px solid transparent;
@@ -215,6 +225,8 @@ body {
 }
 
 #passionTB{
+    padding: 8px;
+    font-size: 15px;
     background-color: blanchedalmond;
     width:10vw;
     animation: passionTB .8s ease 1;
@@ -233,13 +245,13 @@ body {
     position:absolute;
     width: 15vw;
     height:5vw;
-    border-radius:25px;
+    border-radius:20px;
     top:85vh;
     left:32vw;
     font-size: 2.5vw;
     font-family: Mulish;
     background-color:rgb(218, 226, 236);
-    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.3);
     
 }
 
@@ -262,6 +274,8 @@ body {
     opacity: 0;
     width:50vw;
     transition: opacity 0.00001s ease-in;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.3);
+
 }
 .welcomeDiv{
     position:absolute;
@@ -387,11 +401,13 @@ body {
     animation: contdiv .8s ease 1;
    overflow-y:auto;
    max-height:45vw;
+   box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.3);
+
 
 }
 #aiMan{
     position:absolute;
-    bottom: 45vh;
+    bottom: 35vh;
     width:60vw;
     left:60vw;
     transform:scaleX(-1);
