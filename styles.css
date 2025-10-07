@@ -95,12 +95,14 @@ body {
     width:20vw; 
     height:5vh;
     font-size:1.5vw;
-    background-color:rgb(219, 207, 207);
+    background-color: white;
     border: 2px solid transparent;
     border-radius: 5px;
 
 
 }
+
+
 .logPassword{
     position:absolute;
     font-size:5vw; 
@@ -115,7 +117,7 @@ body {
     width:20vw; 
     height:5vh;
     font-size:1.5vw;
-    background-color:rgb(219, 207, 207);
+    background-color: white;
     border: 2px solid transparent;
     border-radius: 5px;
 
@@ -158,7 +160,7 @@ body {
     border-radius: 15px;
     font-family: Mulish;
     background-color:rgb(218, 226, 236);
-    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.2);
     animation: logUser ease 1.1s ;
 }
 
