@@ -113,6 +113,8 @@ body {
 
 
 }
+
+
 .logPassword{
    position:absolute;
    font-size:5vw;
@@ -135,8 +137,20 @@ body {
 
   
 }
+.questionOutline{
+    position:absolute;
+    left:65vw;
+    top:10vw;
+    width:30vw;
+    height:70vh;
+    border-radius: 25px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(90deg, rgb(55, 75, 97), rgb(65, 83, 100)) ;
+    white-space: pre-wrap;
+    padding:4px;
+    animation: questionOutline ease .5s;
 
-
+}
 
 
 .logOutline {
@@ -199,6 +213,7 @@ body {
 
 
 .gradeDiv input{
+    font-size: 15px;
 
 
    width:15vw;
