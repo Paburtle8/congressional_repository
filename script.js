@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function refresh() {
-        welcomeDiv.textContent = "Get Started Now";
+        welcomeDiv.textContent = "Get Started Now!";
         logDone.textContent="Sign up";
         anchorSignUp.textContent="Already have an account? Log in";
         

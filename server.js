@@ -1,54 +1,62 @@
+// server.js
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
-import fetch from "node-fetch";
-
+// If your Node version does not provide global fetch, uncomment the next line and run `npm install node-fetch`
+// import fetch from "node-fetch";
 
 const app = express();
-app.use(cors()); 
+app.use(cors());
 app.use(express.json());
 
 const openai = new OpenAI({
-  apiKey: "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", // Keep this secret!
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 app.post("/ai", async (req, res) => {
   try {
     const { prompt } = req.body;
+    if (!prompt) return res.status(400).json({ error: "Missing prompt" });
 
     const response = await openai.responses.create({
-      model: "gpt-5",
-      input: prompt
+      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      input: prompt,
     });
 
-    res.json({ output: response.output_text });
+    // response.output_text is returned by the Responses API helper; adjust if your client returns different structure
+    res.json({ output: response.output_text ?? response.output ?? response });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message || String(err) });
   }
 });
-
-app.listen(3000, () => console.log("Server running on port 3000"));
-
-
 
 app.post("/search", async (req, res) => {
   try {
     const { query } = req.body;
+    if (!query) return res.status(400).json({ error: "Missing query" });
 
-    const serpAns = await fetch(`https://serpapi.com/search.json?q=${encodeURIComponent(query)}&api_key=207e8884fd908b80ffaf530bcccecbcb0593fc649ab8bf86a29fb7ba60379911`);
-    const data = await serpAns.json();
+    const serpKey = process.env.SERPAPI_KEY;
+    if (!serpKey) return res.status(500).json({ error: "SERPAPI_KEY not configured" });
 
+    const url =
+      "https://serpapi.com/search.json?q=" +
+      encodeURIComponent(query) +
+      "&api_key=" +
+      encodeURIComponent(serpKey);
+
+    const fetchFn = global.fetch ?? (await import("node-fetch")).default;
+    const serpResp = await fetchFn(url);
+    const data = await serpResp.json();
     res.json(data);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message || String(err) });
   }
 });
 
-
-
-
-
-
-
+const PORT = parseInt(process.env.PORT, 10) || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
