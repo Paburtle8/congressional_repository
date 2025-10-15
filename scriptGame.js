@@ -72,7 +72,7 @@ canvas.addEventListener("click", function (e) {
     }
 });
 
-let i = 30;
+let i = 15;
 let countdown;
 
 function clock() {

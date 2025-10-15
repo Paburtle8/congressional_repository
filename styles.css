@@ -1,4 +1,5 @@
 
+
 .introBody {
    position:absolute;
    top:25vh;
@@ -42,14 +43,24 @@
    border-radius:20px;
    font-size: 2.5vw;
    font-family: Mulish;
-   background-color:rgb(218, 226, 236);
-   box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+   background-color:rgb(84, 118, 141);
    display:inline-block;
    overflow:hidden;
    width:0;
    white-space: nowrap;
+   color:white;
    animation:
        typing .7s steps(10, end) forwards;
+   border:none;
+   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+   cursor:pointer;
+}
+#logBtn:hover{
+background-color:rgb(87, 137, 173);
+
+
+
+
 }
 
 
@@ -113,8 +124,6 @@ body {
 
 
 }
-
-
 .logPassword{
    position:absolute;
    font-size:5vw;
@@ -137,20 +146,8 @@ body {
 
   
 }
-.questionOutline{
-    position:absolute;
-    left:65vw;
-    top:10vw;
-    width:30vw;
-    height:70vh;
-    border-radius: 25px;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.6);
-    background: linear-gradient(90deg, rgb(55, 75, 97), rgb(65, 83, 100)) ;
-    white-space: pre-wrap;
-    padding:4px;
-    animation: questionOutline ease .5s;
 
-}
+
 
 
 .logOutline {
@@ -158,13 +155,13 @@ body {
    left:22vw;
    top:10vw;
    width:60vw;
-   height:64vh;
+   height:65vh;
    border-radius: 25px;
    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.6);
    background: linear-gradient(90deg, rgb(55, 75, 97), rgb(65, 83, 100)) ;
    animation: logOutline ease .6s;
    animation:
-       typing2 .7s steps(58, end) forwards;
+       logOutline .7s ease-in-out;
 }
 @keyframes logOutline {
    from {transform: translateY(-2vh)}
@@ -189,12 +186,24 @@ body {
    left:47vw;
    border-radius: 15px;
    font-family: Mulish;
-   background-color:rgb(218, 226, 236);
-   box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
+   background-color:rgb(84, 118, 141);
+   color: white;
    animation: logUser ease 1.1s ;
+   border:none;
+   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+   cursor:pointer;
 }
 
 
+
+
+.logDone:hover{
+background-color:rgb(87, 137, 173);
+
+
+
+
+}
 
 
 .cgDiv input {
@@ -213,7 +222,6 @@ body {
 
 
 .gradeDiv input{
-    font-size: 15px;
 
 
    width:15vw;
@@ -327,16 +335,26 @@ body {
    position:absolute;
    width: 15vw;
    height:5vw;
-   border-radius:22px;
+   border-radius:15px;
    top:85vh;
    left:32vw;
    font-size: 2.5vw;
    font-family: Mulish;
    background-color:rgb(218, 226, 236);
    box-shadow: 2px 2px 2px rgba(2, 0, 0, 0.6);
+   border:none;
 
 
   
+}
+#enterBTN:hover{
+
+
+   background-color:rgb(196, 200, 204);
+
+
+
+
 }
 
 
@@ -408,7 +426,7 @@ body {
    position:absolute;
    left:0vw;
    color: rgb(224, 224, 224);
-   left: 43.5vw;
+   left: 42.8vw;
    bottom: 20vh;
    font-family: Mulish;
    animation: logUser ease 1.3s ;
@@ -518,25 +536,21 @@ body {
    font-size:15px;
    background: linear-gradient(90deg, rgb(66, 90, 114), rgb(65, 83, 100)) ;
    animation: contdiv .8s ease 1;
-  overflow-y:auto;
-  max-height:45vw;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4);
+   overflow-y:auto;
+   max-height:45vw;
+   box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4);
+  
 
 
 
 
 }
-#aiMan{
-   position:absolute;
-   bottom: 45vh;
-   width:50vw;
-   left:65vw;
-   transform:scaleX(-1);
-
-
-
-
+.contdiv::-webkit-scrollbar {
+display: none;
 }
+
+
+
 #welcomeText{
    position:absolute;
    left:35vw;
@@ -544,8 +558,10 @@ body {
    color:whitesmoke;
    font-size:45px;
    border-radius: 10px;
-   box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.4);
    background: linear-gradient(90deg, rgb(66, 90, 114), rgb(65, 83, 100)) ;
+   box-shadow: 2px 2px 2px rgba(2, 0, 0, 0.6);
+
+
 }
 
 
@@ -586,15 +602,31 @@ body {
    width: 15vw;
    height:5vw;
    border-radius:15px;
-   top:75vh;
+   top:80vh;
    left:82vw;
    font-size: 2.5vw;
    font-family: Mulish;
-   background-color:rgb(199, 196, 181);
-   box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.6);
+   background-color:rgb(218, 226, 236);
+   box-shadow: 2px 2px 2px rgba(2, 0, 0, 0.6);
+   border:none;
 }
 
 
+
+
+
+
+
+
+#testButton:hover{
+
+
+background-color:rgb(196, 200, 204);
+
+
+
+
+}
 
 
 
