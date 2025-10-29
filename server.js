@@ -14,9 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.get("/", (req, res) => {
-  res.send("server is runninggggg lets goooo");
-});
+
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
