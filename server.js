@@ -1,4 +1,9 @@
 
+app.get("/", (req, res) => {
+  res.send("server is runninggggg lets goooo");
+});
+
+
 import dotenv from "dotenv";
 dotenv.config();
 
