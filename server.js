@@ -1,7 +1,4 @@
 
-app.get("/", (req, res) => {
-  res.send("server is runninggggg lets goooo");
-});
 
 
 import dotenv from "dotenv";
@@ -15,6 +12,11 @@ import OpenAI from "openai";
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
+app.get("/", (req, res) => {
+  res.send("server is runninggggg lets goooo");
+});
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
