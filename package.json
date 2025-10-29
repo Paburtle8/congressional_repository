@@ -1,9 +1,11 @@
 {
   "name": "congressional_repository",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,13 +18,11 @@
     "url": "https://github.com/Paburtle8/congressional_repository/issues"
   },
   "homepage": "https://github.com/Paburtle8/congressional_repository#readme",
-  "description": "",
   "dependencies": {
     "animate.css": "^4.1.1",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
-    "express": "^5.1.0",
-    "install": "^0.13.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "node-fetch": "^3.3.2",
     "openai": "^5.12.2",
     "serpapi": "^2.2.1"
