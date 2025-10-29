@@ -1,12 +1,11 @@
-// server.js
+
 import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
-// If your Node version does not provide global fetch, uncomment the next line and run `npm install node-fetch`
-// import fetch from "node-fetch";
+
 
 const app = express();
 app.use(cors());
@@ -22,11 +21,11 @@ app.post("/ai", async (req, res) => {
     if (!prompt) return res.status(400).json({ error: "Missing prompt" });
 
     const response = await openai.responses.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      model: process.env.OPENAI_MODEL || "gpt-5",
       input: prompt,
     });
 
-    // response.output_text is returned by the Responses API helper; adjust if your client returns different structure
+    
     res.json({ output: response.output_text ?? response.output ?? response });
   } catch (err) {
     console.error(err);

@@ -11,22 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
    const aiText = document.querySelector(".aiText");
    const anchorSignUp = document.querySelector("#anchorSignUp");
    const welcomeDiv = document.querySelector(".welcomeDiv");
-   const dot = document.querySelector("#dot");
+
    const testButton = document.getElementById("testButton");
 
 
-   let count = 0;
 
 
-   setInterval(() => {
-       if (count < 1) {
-           count++;
-           dot.textContent = "Loading.".repeat(count);
-       } else {
-           dot.textContent = "";
-           count = 0;
-       }
-   }, 500);
+
+  
 
 
 async function hashPassword(password){   
@@ -180,6 +172,7 @@ async function hashPassword(password){
 
                testButton.style.display = "block";
 
+               const extraTB = document.getElementById("extraTB");
 
                const gradeTB = document.getElementById("gradeTB");
                const schoolTB = document.getElementById("schoolTB");
@@ -193,7 +186,9 @@ async function hashPassword(password){
                                  .map(input => input.value)
                                  .filter(val => val !== ""),
                    school: schoolTB.value || "",
-                   passion: passionTB.value || ""
+                   passion: passionTB.value || "",
+                   extra: extraTB.value || ""
+
                };
 
 
@@ -212,31 +207,48 @@ async function hashPassword(password){
 
                    const promptWithSearch = `
                    Student Profile:
-                   - Grade: ${studentInfo.grade}
-                   - School: ${studentInfo.school}
-                   - Passion/Interest: ${studentInfo.passion}
-                   - Classes and Grades: ${studentInfo.classes.join(", ")}
-                  
-                   Recent Search Results: ${JSON.stringify(LowData)}
-                  
-                   Task for CounselorAI:
-                   1. Recommend courses based on the student's grade, prior classes, and interests. Only suggest core courses (Math, English, History, Science) if applicable. Format as numbered list:
-                      1. [Course]: [Reason]
-                      2. [Course]: [Reason]
-                      3. ...
-                     
-                   2. Provide concise extra advice or tips (1-2 bullet points).
-                  
-                   3. Recommend 2 suitable colleges/universities for the student, considering grades, passions, and prior courses. Format as:
-                      - College 1: [Reason]
-                      - College 2: [Reason]
-                  
-                   Instructions:
-                   - Be concise and clear; use numbered or bulleted lists as shown.
-                   - Avoid long paragraphs.
-                   - Prioritize recommendations aligned with the student's strengths and interests.
-                   `;
+- Grade: ${studentInfo.grade}
+- School: ${studentInfo.school}
+- Passion/Interest: ${studentInfo.passion}
+- Classes and Grades: ${studentInfo.classes.join(", ")}
+- Additional information: ${studentInfo.extra}
 
+Recent Search Results: ${JSON.stringify(LowData)}
+
+Task for CounselorAI:
+
+1. Recommend courses based on the student's grade, prior classes, interests, and any additional information provided.  
+   - Include both core subjects (Math, English, History, Science) and electives or specialized programs relevant to the student’s profile.  
+   - Use verified course names from the school's most recent program of studies.  
+   - Format as:
+     1. [Course]: [Reason]
+     2. [Course]: [Reason]
+     3. ...
+   - Keep each explanation/reason concise (1-2 sentences per course).  
+   - Take into account the student's additional information (e.g., extracurriculars, learning preferences, special circumstances) to fine-tune recommendations.
+
+2. Provide extra advice or tips (1-2 short bullet points).  
+   - Use the student's extra information where relevant to provide personalized, actionable guidance.  
+
+3. Recommend three colleges: two “likely” fits and one “reach” school based on the student's interests, prior classes, grades, and additional information.  
+   - Use verified or recent data from web search results when available.  
+   - Format as:
+     - Likely College 1: [Reason]
+     - Likely College 2: [Reason]
+     - Reach College: [Reason]
+   - Keep each reason concise (1-2 sentences).  
+   - Factor in any extra info that may affect fit (e.g., desired programs, extracurricular strengths, or special circumstances). 
+   
+   - Be concise, structured, and confident. Avoid long paragraphs.
+- Use numbered or bulleted lists exactly as shown.
+- Base all academic and institutional info in **real, current data** from web searches using the serp api (school program of studies, course lists, college info).  
+- Be **decisive**: for each class, give one clear best recommendation.  
+- Only provide alternate options if a single clear recommendation is impossible — this should be rare and clearly justified.  
+- Avoid uncertain or filler language (e.g., “might,” “could,” “possibly”).  
+- Insert a blank line between each course for readability.  
+   `;
+
+   
 
                const res = await fetch("http://localhost:3000/ai", {
                    method: "POST",

@@ -221,6 +221,33 @@ background-color:rgb(87, 137, 173);
 }
 
 
+.extraDiv input {
+
+  background-color: blanchedalmond;
+   border: 2px solid transparent;
+   border-radius: 10px;
+   padding: 5px;
+   box-shadow: 2px 2px 2px rgba(2, 0, 0, 0.6);
+   font-size: 15px;
+   height:5vh;
+   width:23vw;
+   
+
+
+
+
+
+
+}
+
+#extraText{
+   animation: CGtext .8s ease 1;
+   left:0vw;
+   color: rgb(224, 224, 224);
+   font-size: 35px;   
+}
+
+
 .gradeDiv input{
 
 
@@ -426,7 +453,7 @@ background-color:rgb(87, 137, 173);
    position:absolute;
    left:0vw;
    color: rgb(224, 224, 224);
-   left: 42.8vw;
+   left: 43.8vw;
    bottom: 20vh;
    font-family: Mulish;
    animation: logUser ease 1.3s ;
@@ -627,6 +654,8 @@ background-color:rgb(196, 200, 204);
 
 
 }
+
+
 
 
 
